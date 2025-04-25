@@ -26,8 +26,11 @@ jobs:
       - name: Download Wiz CLI
         run: curl -o wizcli https://wizcli.app.wiz.io/latest/wizcli && chmod +x wizcli
 
+      - name: Print vars
+        run: echo "$GITHUB_CONTEXT"
+
       - name: Authenticate to Wiz
-        run: ./wizcli auth --id "$WIZ_CLIENT_ID" --secret "$WIZ_CLIENT_SECRET"
+        run: ./wizcli auth
 
       - name: Run Wiz CLI Directory Scan
         run: |-
