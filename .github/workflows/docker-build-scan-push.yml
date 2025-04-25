@@ -27,6 +27,9 @@ jobs:
       - name: Download Wiz CLI
         run: curl -o wizcli https://wizcli.app.wiz.io/latest/wizcli && chmod +x wizcli
 
+      - name: Print vars
+        run: echo "$GITHUB_CONTEXT"
+
       - name: Authenticate to Wiz
         run: sudo -E ./wizcli auth
 
